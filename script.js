@@ -46,23 +46,25 @@ function render(){
     newsBoard.innerHTML =''; //비우고 시작
     const pagination = document.querySelector('.pagination');
     pagination.innerHTML =''// 기존내용 삭제
+    let newsHTML;
 
-    if(newsList)
-    const newsHTML = newsList.map(news => 
-        `<div class="row item">
-            <div class="col-lg-4">
-                        <img src=${news.urlToImage?? replaceImage}  />
-                    </div>
-                    <div class="col-lg-8">
-                        <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
-                        <p class="content">${news.description}</p>
-                        <div>
-                            ${news.source.name} : ${news.publishedAt} 
+    if(newsList){
+        newsHTML = newsList.map(news => 
+            `<div class="row item">
+                <div class="col-lg-4">
+                            <img src=${news.urlToImage?? replaceImage}  />
                         </div>
-                    </div>
+                        <div class="col-lg-8">
+                            <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
+                            <p class="content">${news.description}</p>
+                            <div>
+                                ${news.source.name} : ${news.publishedAt} 
+                            </div>
+                        </div>
+                </div>
             </div>
-        </div>
-    `).join('')
+        `).join('')
+    }
     newsBoard.innerHTML = newsHTML;
     pagination.innerHTML = makePaginationHTML()
 
