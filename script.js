@@ -57,16 +57,18 @@ document.getElementById('news-board').addEventListener('click', function(event) 
 async function onMenuClick(e){
     const category = e.target.id
     //혹은 e.target.textContent.toLowerCase();
-    url =`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`
-    await getNews3();
+    // url =`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`
+    url3 =`https://grand-gumdrop-215732.netlify.app/top-headlines?country=${country}&category=${category}` 
+    await getNews();
 }
 async function search(){
     // const input = document.querySelector('.search-input') //전역변수
     const keyword = input.value;
     input.value =''
     country = checkInput(keyword);
-    url = `https://newsapi.org/v2/top-headlines?country=${country}&q=${keyword}&apiKey=${apiKey}`    
-    await getNews3()
+    // url = `https://newsapi.org/v2/top-headlines?country=${country}&q=${keyword}&apiKey=${apiKey}`   
+    url3 =`https://grand-gumdrop-215732.netlify.app/top-headlines?country=${country}&q=${keyword}` 
+    await getNews()
 }
 
 function checkInput(word){
