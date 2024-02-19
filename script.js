@@ -48,7 +48,7 @@ function render(){
     pagination.innerHTML =''// 기존내용 삭제
 
     if(newsList)
-    const newsHTML = newsList.map(news => 
+    let newsHTML = newsList.map(news => 
         `<div class="row item">
             <div class="col-lg-4">
                         <img src=${news.urlToImage?? replaceImage}  />
