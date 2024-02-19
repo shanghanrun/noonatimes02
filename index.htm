@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="#">
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'
+        integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel='stylesheet' href='style.css'>
+
+</head>
+
+<body>
+    <section class="container">
+        <div class="search-container">
+            <i class="material-icons">search</i>
+            <input type='text' class='search-input' placeholder='키워드 검색' id="input">
+            <button onclick="search()" id="search-button">검색</button>
+            <span>언어</span><span class="country" onclick="changeCountry()">한국기사 → 영어기사</span>
+        </div>
+
+        <section>
+            <div class="head-line">
+                <img src="noonatimes2.png" alt="누나타임즈" />
+            </div>
+            <div class="menus">
+                <button id="business">Business</button>
+                <button id="entertainment">Entertainment</button>
+                <button id="general">General</button>
+                <button id="health">Health</button>
+                <button id="science">Science</button>
+                <button id="sports">Sports</button>
+                <button id="technology">Technology</button>
+            </div>
+        </section>
+        <!-- <section id="video">
+            <h2 id="videoTitle"></h2>
+            <video id="videoPlayer" controls>
+                controls를 넣으면 비디오컨트롤이 나온다. -->
+        <!-- </video>
+        <p id="videoDescription"></p> -->
+
+        <!-- </section>
+    <section id="images"> -->
+
+        <!-- </section> -->
+        <section id="news-board">
+
+
+        </section>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+
+            </ul>
+        </nav>
+    </section>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'
+        integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL'
+        crossorigin='anonymous'></script>
+
+    <script src='script.js'></script>
+</body>
+
+</html>

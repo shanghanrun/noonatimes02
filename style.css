@@ -1,0 +1,116 @@
+.head-line {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.head-line img {
+    height: 200px;
+    width: 430px;
+}
+
+.menus {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top: 1px solid rgb(203, 202, 202);
+    border-bottom: 4px double black;
+}
+
+button {
+    border: none;
+    background: none;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: pink;
+}
+
+.on {
+    background-color: pink;
+    transition: 0.4s;
+}
+
+.search-container {
+    position: relative;
+    display: inline-block;
+
+    padding-top: 10px;
+}
+
+/* 입력 필드의 스타일 */
+.search-input {
+    padding-left: 25px;
+    /* 아이콘의 너비만큼 입력 필드를 내부적으로 이동 */
+}
+
+#search-button {
+    background-color: rgb(126, 154, 253);
+}
+
+i {
+    vertical-align: middle;
+    padding-bottom: 4px;
+    color: gray;
+}
+
+img {
+    max-width: 100%;
+    max-height: 600px;
+}
+
+.content {
+    font-size: 20px;
+}
+
+.item {
+    padding: 10px;
+    border-bottom: 3px solid rgb(131, 153, 218);
+}
+
+.page-btn {
+    border: 1px solid rgb(123, 123, 254);
+    border-radius: 5px;
+}
+
+.active {
+    background-color: rgb(123, 123, 254);
+    font-style: bold;
+}
+
+.disabled {
+    opacity: 0.2;
+}
+
+.item h2 {
+    color: rgb(49, 95, 244);
+    /* text-decoration: none; */
+    /* a 태그일 경우 기본 밑줄 제거 */
+    border-bottom: 1px solid rgba(0, 0, 255, 0.2);
+}
+
+.country {
+    background-color: rgb(77, 252, 152);
+    font-size: 20px;
+    padding: 3px;
+}
+
+.country:hover {
+    cursor: pointer;
+}
+
+span {
+    margin-left: 20px;
+}
+
+
+.title {
+    color: rgb(18, 72, 251);
+    text-decoration: underline;
+}
+
+.title:hover {
+    cursor: pointer;
+}
