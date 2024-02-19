@@ -24,7 +24,6 @@ console.log(menus)
 
 function onMenuClick(e){
     const category = e.target.id
-    //혹은 e.target.textContent.toLowerCase();
     // url =`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`
     url3 =`https://grand-gumdrop-215732.netlify.app/top-headlines?country=${country}&category=${category}` 
     await getNews();
