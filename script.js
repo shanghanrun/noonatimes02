@@ -21,52 +21,17 @@ const menus = document.querySelectorAll('.menus button')
 menus.forEach(button => addEventListener('click', onMenuClick))
 console.log(menus)
 
-const input = document.querySelector('.search-input')
-// 이벤트 전파로 인해서 input을 enter로 하면... 막아지지 않고 오류난다.
-// input.addEventListener('keyup', function(event){  //input enter에 search 기능 추가
-    
-//     if (event.key == 'Enter'){
-//         const keyword = input.value;
-//         input.value =''
-//         event.stopPropagation()
-//         const country = checkInput(keyword);
-//         url = `https://newsapi.org/v2/top-headlines?country=${country}&q=${keyword}&apiKey=${apiKey}`    
-//         getNews();
-//     }
-// })
 
-function changeCountry(){
-    const countryTag = document.querySelector('.country')
-    if (countryTag.innerText == '한국기사 → 영어기사'){
-        countryTag.innerText = '영어기사 → 한국기사';
-        country ='us'
-        
-    } else if(countryTag.innerText == '영어기사 → 한국기사'){
-        //! 그냥 else라고 하면 불분명하다. 그밖의 다른 것은,
-        // 아닌것 모두
-        countryTag.innerText = '한국기사 → 영어기사';
-        country ='kr'
-    }
-}
-
-
-document.getElementById('news-board').addEventListener('click', function(event) {
-    event.stopPropagation(); // 이벤트 전파 중지
-});
-
-async function onMenuClick(e){
+function onMenuClick(e){
     const category = e.target.id
     //혹은 e.target.textContent.toLowerCase();
     // url =`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`
     url3 =`https://grand-gumdrop-215732.netlify.app/top-headlines?country=${country}&category=${category}` 
     await getNews();
 }
-async function search(){
-    // const input = document.querySelector('.search-input') //전역변수
+function search(){
     const keyword = input.value;
-    input.value =''
-    country = checkInput(keyword);
-    // url = `https://newsapi.org/v2/top-headlines?country=${country}&q=${keyword}&apiKey=${apiKey}`   
+    input.value =''  
     url3 =`https://grand-gumdrop-215732.netlify.app/top-headlines?country=${country}&q=${keyword}` 
     await getNews()
 }
@@ -88,7 +53,7 @@ function checkInput(word){
 }
 
 
-async function render(){    
+function render(){    
     // let index = page -1;
     const newsBoard = document.querySelector('#news-board')
     newsBoard.innerHTML =''; //비우고 시작
