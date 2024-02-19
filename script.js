@@ -58,15 +58,14 @@ function render(){
         <div>데이터 하나</div>
         <div class="row item">
                 <div class="col-lg-4">
-                            <img src=${news.urlToImage?? replaceImage}  />
-                        </div>
-                        <div class="col-lg-8">
+                        <img src=${news.urlToImage?? replaceImage}  />
+                </div>
+                <div class="col-lg-8">
                             <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
                             <p class="content">${news.description}</p>
                             <div>
                                 ${news.source.name} : ${news.publishedAt} 
                             </div>
-                        </div>
                 </div>
         </div>
         `;
@@ -77,14 +76,13 @@ function render(){
             `<div class="row item">
                 <div class="col-lg-4">
                             <img src=${news.urlToImage?? replaceImage}  />
-                        </div>
-                        <div class="col-lg-8">
+                </div>
+                <div class="col-lg-8">
                             <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
                             <p class="content">${news.description}</p>
                             <div>
                                 ${news.source.name} : ${news.publishedAt} 
                             </div>
-                        </div>
                 </div>
             </div>
         `).join('')
