@@ -40,6 +40,7 @@ function search(){
 
 
 function render(){    
+    console.log('render()시작 :' )
     if(totalResults ==0){
         alert('해당기사는 없습니다.')
     }
@@ -56,6 +57,7 @@ function render(){
         `;
 
     } else{
+        console.log('랜더링 newsList :', newsList )
         const newsHTML = newsList.map(news => 
             `<div class="row item">
                 <div class="col-lg-4">
@@ -230,8 +232,7 @@ async function getNews(){
             if(data.articles.length == 0){                
                 throw new Error('No result for this search');
             }
-            newsList = data.articles; 
-            console.log('newsList :', newsList)            
+            newsList = data.articles;           
             totalResults = data.totalResults;
             console.log('newsList :', newsList)
             console.log('totalResults :', totalResults)
