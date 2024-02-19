@@ -167,7 +167,7 @@ function errorRender(message){
             ${message}
         </div>
     `;
-    newsBoard.innerHTML= errorHTML;.
+    newsBoard.innerHTML= errorHTML;
     document.querySelector('.pagination').innerHTML = ""
 }
 
