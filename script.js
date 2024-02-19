@@ -26,7 +26,7 @@ function onMenuClick(e){
     const category = e.target.id
     // url =`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`
     url3 =`https://grand-gumdrop-215732.netlify.app/top-headlines?country=${country}&category=${category}` 
-    await getNews();
+    getNews();
 }
 function search(){
     const keyword = input.value;
@@ -226,7 +226,7 @@ async function getNews(){
         const response = await fetch(newsUrl);  
         const data = await response.json()
         console.log('data: ', data)  
-         if (response.status == 200){
+        if (response.status == 200){
             console.log('data : ', data);
             if(data.articles.length == 0){                
                 throw new Error('No result for this search');
@@ -234,12 +234,13 @@ async function getNews(){
             newsList = data.articles;             
             totalResults = data.totalResults;
             console.log('newsList :', newsList)
-             console.log('totalResults :', totalResults)
-             render();
+            console.log('totalResults :', totalResults)
+
+            render();
              
-         } else{
+        } else{
             throw new Error('예상 못한 에러를 만났습니다.')
-         }
+        }
 
     } catch(e){
         // console.log(e.message)
