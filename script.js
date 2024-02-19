@@ -2,6 +2,7 @@ const apiKey ='4c2d201c758b4664ab2eeaa863a7bbee'
 let country = 'kr'
 let url = `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${apiKey}`;
 let url2 = 'http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines'
+let url3 = `https://grand-gumdrop-215732.netlify.app/top-headlines`
 let newsList=[]
 const replaceImage ="noonatimes2.png";
 let totalResults = 0;
@@ -252,7 +253,7 @@ function moveToPage(pageNo){
 
 
 async function getNews(){
-    const newsUrl = new URL(url2);
+    const newsUrl = new URL(url3);
     newsUrl.searchParams.set("page",page)  // &page=page
     newsUrl.searchParams.set("pageSize",pageSize) //&pageSize=pageSize
     try{
