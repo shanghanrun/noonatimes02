@@ -55,6 +55,19 @@ function render(){
         console.log('단 1개의 데이터')
         newsHTML =`
         <div>데이터 하나</div>
+        <div class="row item">
+                <div class="col-lg-4">
+                            <img src=${news.urlToImage?? replaceImage}  />
+                        </div>
+                        <div class="col-lg-8">
+                            <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
+                            <p class="content">${news.description}</p>
+                            <div>
+                                ${news.source.name} : ${news.publishedAt} 
+                            </div>
+                        </div>
+                </div>
+        </div>
         `;
 
     } else{
