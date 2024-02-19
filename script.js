@@ -53,6 +53,7 @@ function render(){
 
     if(newsList.length == 1){
         console.log('단 1개의 데이터')
+        const news = [...newsList];
         newsHTML =`
         <div>데이터 하나</div>
         <div class="row item">
