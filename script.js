@@ -210,7 +210,7 @@ function makePaginationHTML(){
                        // [1,2,3,4,5] 혹은 [6,7,8,9,10]
     
     console.log('currentGroup :', currentGroup)
-    console.log('group :', group).
+    console.log('group :', group)
 
 
     let paginationHTML =`<li class="prev-li"><button class="page-btn" id="prev-page" onclick="moveToPage('prev page')">prev page</button></li><li class="page-li"><button class="page-btn" id="prev" onclick="moveToPage(${page-1})">Prev</button></li>`;
