@@ -39,7 +39,8 @@ function search(){
 }
 
 
-function render(){    
+function render(){   
+    let newsHTML; 
     console.log('render()시작 :' )
     if(totalResults ==0){
         alert('해당기사는 없습니다.')
@@ -52,13 +53,13 @@ function render(){
 
     if(newsList.length == 1){
         console.log('단 1개의 데이터')
-        const newsHTML =`
+        newsHTML =`
         <div>데이터 하나</div>
         `;
 
     } else{
         console.log('랜더링 newsList :', newsList )
-        const newsHTML = newsList.map(news => 
+        newsHTML = newsList.map(news => 
             `<div class="row item">
                 <div class="col-lg-4">
                             <img src=${news.urlToImage?? replaceImage}  />
