@@ -32,7 +32,7 @@ function search(){
     const keyword = input.value;
     input.value =''  
     url3 =`https://grand-gumdrop-215732.netlify.app/top-headlines?country=${country}&q=${keyword}` 
-    await getNews()
+    getNews()
 }
 
 function checkInput(word){
