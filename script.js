@@ -166,9 +166,7 @@ function errorRender(message){
             ${message}
         </div>
     `;
-    newsBoard.innerHTML= errorHTML;
-
-    // pagiNation도 안보이게 한다.(삭제하지 않으면 기존모양 그대로 나온다.)
+    newsBoard.innerHTML= errorHTML;.
     document.querySelector('.pagination').innerHTML = ""
 }
 
@@ -192,12 +190,6 @@ function makeGroups(){
         }
     }
 
-    // // 간혹 맨마지막에 빈리스트가 추가되는 경우가 있다.
-    // // 원인을 파악해야 되지만, 우선 임시방편으로
-    // const lastIndex = groups.length-1
-    // if(groups[lastIndex].length == 0){
-    //     groups.pop()
-    // }
 
     console.log('groups : ', groups)
     console.log('groups.length : ', groups.length)
@@ -217,14 +209,7 @@ function makePaginationHTML(){
                        // [1,2,3,4,5] 혹은 [6,7,8,9,10]
     
     console.log('currentGroup :', currentGroup)
-    console.log('group :', group)
-    // 일단 페이지번호만 메긴다면
-    // let paginationHTML = group.map(i => {
-    //     return `<button onclick="moveToPage(${i})">${i}</button>`
-    //     }).join('')
-
-    // 나중에 <<prev page,   next page>> 를 누르는 버튼
-    // 이걸 누르면 groupIndex--    groupIndex++ ; render()
+    console.log('group :', group).
 
 
     let paginationHTML =`<li class="prev-li"><button class="page-btn" id="prev-page" onclick="moveToPage('prev page')">prev page</button></li><li class="page-li"><button class="page-btn" id="prev" onclick="moveToPage(${page-1})">Prev</button></li>`;
