@@ -34,47 +34,44 @@ function search(){
     const keyword = input.value;
     input.value =''  
     url3 =`https://grand-gumdrop-215732.netlify.app/top-headlines?country=${country}&q=${keyword}` 
+    console.log('서치시작')
     getNews()
-}
-
-function checkInput(word){
-     // 정규 표현식을 사용하여 한글/영문 여부를 판별
-    var isKorean = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test(word);
-    var isEnglish = /^[a-zA-Z]+$/.test(word);
-    if(isKorean) {
-        country = 'kr';
-        console.log(country);
-        return 'kr';
-    }
-    if(isEnglish) {
-        country = 'us';
-        console.log(country)
-        return 'us';
-    }
 }
 
 
 function render(){    
-    // let index = page -1;
+    if(totalResults ==0){
+        alert('해당기사는 없습니다.')
+    }
+
     const newsBoard = document.querySelector('#news-board')
     newsBoard.innerHTML =''; //비우고 시작
     const pagination = document.querySelector('.pagination');
     pagination.innerHTML =''// 기존내용 삭제
-    const newsHTML = newsList.map(news => 
-        `<div class="row item">
-            <div class="col-lg-4">
-                        <img src=${news.urlToImage?? replaceImage}  />
-                    </div>
-                    <div class="col-lg-8">
-                        <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
-                        <p class="content">${news.description}</p>
-                        <div>
-                            ${news.source.name} : ${news.publishedAt} 
+
+    if(newsList.length == 1){
+        console.log('단 1개의 데이터')
+        const newsHTML =`
+        <div>데이터 하나</div>
+        `;
+
+    } else{
+        const newsHTML = newsList.map(news => 
+            `<div class="row item">
+                <div class="col-lg-4">
+                            <img src=${news.urlToImage?? replaceImage}  />
                         </div>
-                    </div>
+                        <div class="col-lg-8">
+                            <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
+                            <p class="content">${news.description}</p>
+                            <div>
+                                ${news.source.name} : ${news.publishedAt} 
+                            </div>
+                        </div>
+                </div>
             </div>
-        </div>
-    `).join('')
+        `).join('')
+    }
     newsBoard.innerHTML = newsHTML;
     pagination.innerHTML = makePaginationHTML()
 
@@ -233,7 +230,8 @@ async function getNews(){
             if(data.articles.length == 0){                
                 throw new Error('No result for this search');
             }
-            newsList = data.articles;             
+            newsList = data.articles; 
+            console.log('newsList :', newsList)            
             totalResults = data.totalResults;
             console.log('newsList :', newsList)
             console.log('totalResults :', totalResults)
